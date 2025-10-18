@@ -1,0 +1,4 @@
+certs/*.pem
+.env
+.env.local
+docker-compose.yml.backup

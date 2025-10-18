@@ -1,0 +1,23 @@
+services:
+  db:
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '1.0'
+    environment:
+      POSTGRES_DB: microloans_prod
+    restart: always
+
+  api:
+    env_file:
+      - .env.production
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '1.0'
+    restart: always
+
+  nginx:
+    restart: always
